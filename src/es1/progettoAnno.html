@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione sito scout</title>
+    <link rel="stylesheet" href="foglioStile.css">
+    <style type="text/css">
+        table, th, td {
+            padding: 1em;
+            width: fit-content;
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+
+        img { 
+         border-radius: 8px;
+         display: block;
+         /* immagini al centro
+         margin-left: auto;
+         margin-right: auto; */
+         width: 50%;
+        }
+
+        /* # hashtag indica l'attributo ID 
+           può essere utilizzato una unica volta
+        */
+        #titolo {
+         text-align: center;
+         text-decoration-line: overline underline;
+         text-decoration-color: red;  
+        }
+
+         /* . il punto indica la proprietà CLASS 
+         può essere più volte su più tag
+         */
+        .inf {
+         background-color: cornflowerblue;
+        }
+
+        .sis {
+         background-color:chartreuse;
+        }
+
+        .mat {
+         background-color:chocolate;
+        }
+
+        .tps {
+         background-color:magenta;
+        }
+
+        .rel {
+         background-color:brown;
+        }
+
+        .smot {
+         background-color:gold;
+        }
+
+        .ita {
+         background-color:darkorchid;
+        }
+
+        .gpoi {
+         background-color:darkolivegreen;
+        }
+
+        .ing {
+         background-color:springgreen;
+        }
+
+        .ia {
+         background-color:lightgreen;
+        }
+
+        .pot {
+         background-color:silver;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1><center>IIS MARCONI PIERALISI<center></h1>
+        <nav>
+           <ul>
+              <li><a href="">Informatica</a></li>
+              <li><a href="">Sistemi e rete</a></li>
+              <li><a href="">Tpsit</a></li>
+              <li><a href="">Italiano</a></li>
+              <li><a href="">Matematica</a></li>
+              <li><a href="">Inglese</a></li>
+              <li><a href="">Scienze Motorie</a></li>
+              <li><a href="">Storia</a></li>
+              <li><a href="">GPOI</a></li>
+              <li><a href="">Religione</a></li>
+              <li><a href="progettoAnno.html">Progetto dell'anno</a></li>
+            </ul>
+        </nav>
+     </header>
+     <h1 id = "titolo"><center>Registrazione scout</center></h1>
+     <section>
+        <form name = "Registrazione" method="post" action="stampa.php">
+            
+                
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname" value=""><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname" value=""><br>
+                <label for="fname">User name:</label><br>
+                <input type="text" id="uname" name="uname" value=""><br>
+
+                
+                <label for="citta">Città di residenza:</label>
+                <select id="citta" name="citta">
+                    <option value="jesi">Jesi</option>
+                    <option value="ancona">Ancona</option>
+                    <option value="senigallia">Senigallia</option>
+                    <option value="fabriano">Fabriano</option>
+                    <option value="osimo">Osimo</option>
+                </select>
+                <br><br>
+
+                
+                <label>Genere:</label>
+                <input type="radio" id="maschile" name="genere" value="maschile">
+                <label for="maschile">Maschile</label>
+                <input type="radio" id="femminile" name="genere" value="femminile">
+                <label for="femminile">Femminile</label>
+                <br><br>
+
+                
+                <label for="dataNascita">Data di nascita:</label>
+                <input type="date" id="dataNascita" name="dataNascita">
+                <br><br>
+
+                <input type="submit" value="Submit" ><br>
+              
+        </form>
+<p id="dati"></p>
+        <script>
+            function stampadati()
+            {
+                var nome = document.getElementById("fname");
+                var cognome = document.getElementById("lname");
+                var User = document.getElementById("uname");
+                var citta = document.getElementById("citta");
+                var genere = document.querySelector('input[name="genere"]:checked');
+                var dataNascita = document.getElementById("dataNascita");
+
+                console.log(document.getElementsByName("registrazione"));
+                console.log(nome);
+
+                document.getElementById("dati").innerHTML = "contenuto: <br>" + 
+                    nome.value + "<br>" + 
+                    cognome.value + "<br>" + 
+                    User.value + "<br>" + 
+                    citta.options[citta.selectedIndex].text + "<br>" + 
+                    (genere ? genere.value : '') + "<br>" + 
+                    dataNascita.value;
+            }
+        </script>
+     </section>
+     <footer>
+        <p>
+           Indirizzo
+           Via Raffaello Sanzio, 8
+           60035 - JESI (AN)
+        </p>
+
+      </footer>
+</body>
+</html>
