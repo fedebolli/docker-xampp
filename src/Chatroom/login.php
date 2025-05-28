@@ -29,16 +29,20 @@ function loginUser($username, $password, $conn) {
         $response['message'] = 'Database Error.';
     }
     
-    return $response;
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    // Redirect to register.html if the request is a GET request (from the register button)
+    header('Location: register.html');
+    exit;
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'] ?? null;
+    $password = $_POST['password'] ?? null;
 
-$username = $_POST['username'] ?? null;
-$password = $_POST['password'] ?? null;
+        }
+        
+    }
 
-$response = array();
-if (isset($username) && isset($password)) {
-    $response = loginUser($username, $password, $conn);
-}
-header('Content-Type: application/json');
-echo json_encode($response);
+
+

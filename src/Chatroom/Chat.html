@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+      <style>
+        /* Basic Reset */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #1e1e1e; /* Dark Background */
+          color: #ffffff; /* White Text */
+          display: flex;
+          min-height: 100vh;
+          flex-direction: column;
+        }
+
+        /* Main Layout */
+        main {
+          display: flex;
+          width: 100%;
+          flex-grow: 1; /* Allow main to grow and fill the space */
+          overflow: hidden; /* Hide overflow content */
+        }
+
+        /* Sidebar */
+        #sidebar {
+          background-color: #141414; /* Darker Sidebar */
+          width: 200px;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+        }
+
+        #sidebar h3 {
+          margin-bottom: 15px;
+          color: #ff4d4d; /* Red Accent */
+          font-weight: bold;
+        }
+
+        #user-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          flex-grow: 1;
+          overflow-y: auto;
+        }
+
+        #user-list li {
+          padding: 8px 0;
+          cursor: pointer;
+          color: #ffffff; /* White Text */
+        }
+        #user-list li:hover {
+          text-decoration: underline;
+          color: #ff4d4d;
+        }
+
+        /* Chat Container */
+        #chat-container {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          background-color: #282828; /* Darker Chat Background */
+          padding: 20px;
+          overflow: hidden;
+        }
+
+        /* Chat Messages */
+        #chat-messages {
+          flex-grow: 1;
+          overflow-y: auto;
+          margin-bottom: 10px;
+        }
+
+        .message {
+          margin-bottom: 15px;
+          padding: 10px;
+          border-radius: 5px;
+        }
+
+        .message-user {
+          font-weight: bold;
+          color: #ff4d4d; /* Red User Color */
+          margin-bottom: 5px;
+        }
+
+        .message-content {
+          color: #ffffff; /* White Text */
+        }
+
+        .message.sent {
+          background-color: #333333; /* Darker for sent messages */
+          align-self: flex-end;
+        }
+
+        .message.received {
+          background-color: #404040; /* Darker for received messages */
+          align-self: flex-start;
+        }
+
+        /* Input Area */
+        #input-area {
+          display: flex;
+          width: 100%;
+          gap: 10px;
+          padding-top: 10px;
+        }
+
+        #message-input {
+          flex-grow: 1;
+          padding: 10px;
+          border: 1px solid #ff4d4d; /* Red Border */
+          border-radius: 5px;
+          background-color: #333333; /* Dark Input */
+          color: #ffffff; /* White Text */
+        }
+        #message-input::placeholder{
+          color: #ffffff;
+        }
+
+        #send-button {
+          background-color: #ff4d4d; /* Red Button */
+          color: white;
+          padding: 10px 15px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+
+        #send-button:hover{
+          background-color: #d43838;
+        }
+
+        /* Logout Button */
+        #logout-button {
+          background-color: #ff4d4d; /* Red Button */
+          color: white;
+          padding: 10px 15px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-top: auto;
+          text-decoration: none;
+        }
+        #logout-button:hover{
+          background-color: #d43838;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          #sidebar {
+            width: 100px;
+          }
+          #user-list li {
+            padding: 5px 0;
+          }
+        }
+      </style>
+</head>
+<body>
+    <header>
+        
+    </header>
+    <main>
+        <div id="sidebar">
+            <h3>Users</h3>
+            <ul id="user-list">
+                <li>User 1</li>
+                <li>User 2</li>
+                <li>User 3</li>
+            </ul>
+            <a href="logout.php" id="logout-button">Logout</a>
+        </div>
+        <div id="chat-container">
+            <div id="chat-messages"></div>
+            <div id="input-area">
+                <input type="text" id="message-input" placeholder="Type your message...">
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

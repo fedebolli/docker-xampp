@@ -6,128 +6,121 @@
     <title>Chatroom Login</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Text:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #23272A; /* Discord Darker Background */
-            color: #F8F8F8; /* Off-White Text */
-            display: flex;
-            justify-content: center;
-            align-items: center;
+           font-family: 'SF Pro Text', sans-serif;
+            background-color: #111; /* Dark background */
+            background-image: url('img/image.png'); /* Optional: add a subtle background texture */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+           display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
             height: 100vh;
-            margin: 0 auto;
-            padding: 20px; /* Added padding for smaller screens */
-            box-sizing: border-box; /* Ensure padding is included in element's total width and height */
+            margin: 0;
+            box-sizing: border-box;
+            color: #333; /* Dark Gray/Black */
         }
 
         .login-container {
-            background-color: #2C2F33; /* Discord Dark Background */
-            padding: 40px;
+            background-color: #222; /* Dark login box */
+            padding: 30px;
+            padding-top: 40px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Enhanced Shadow */
-            width: 400px; /* Increased width for better layout */
+            box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.5); /* Red shadow */
+            width: 300px;
             max-width: 100%;
+            text-align: center; /* Center the text */
         }
 
         h2 {
             text-align: center;
             margin-bottom: 30px;
-            color: #FFFFFF; /* White Header Text */
+            color: #333; /* Dark Gray/Black */
+            font-weight: 600;
+            font-size: 24px; 
+            text-transform: uppercase;
+            color: #FF4136; /* Dark red text */
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
 
         label {
-            display: block;
-            margin-bottom: 10px;
-            color: #B9BBBE; /* Light Gray Label Text */
-            font-weight: bold;
+             display: block;
+            margin-bottom: 5px;
+            color: #333;
         }
 
         input[type="text"],
         input[type="password"] {
             width: 100%;
             padding: 12px;
-            border: none;
-            border-radius: 5px;
-            background-color: #36393F; /* Slightly Darker Input Background */
-            color: #F8F8F8; /* Off-White Input Text */
-            box-sizing: border-box;
+            border: 1px solid #FF4136;
+            border-radius: 4px;
+            background-color: #333;
+            color: #fff; /* Changed to white */
+           box-sizing: border-box;
             font-size: 16px;
-            transition: box-shadow 0.3s ease;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         input[type="text"]:focus,
         input[type="password"]:focus {
-            outline: none;
-            box-shadow: 0 0 0 2px #7289DA; /* Discord Brand Color Focus */
+           outline: none;
+            border-color: #FF4136; 
         }
-
         .btn-primary {
-            background-color: #7289DA; /* Discord Brand Color */
-            color: #FFFFFF;
-            padding: 14px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;       
-            width: 100%;
+           background-color: #FF4136; /* Dark red button */
+            color: #eee; /* Light text */
+            padding: 12px 20px;
+           border: none;
+            border-radius: 4px;
+           cursor: pointer;
+           width: 100%;
             font-size: 16px;
-            transition: background-color 0.3s ease;
+            box-shadow: 0px 2px 4px rgba(255, 0, 0, 0.5); /* Red shadow */
         }
 
         .btn-primary:hover {
-            background-color: #677BC4; /* Slightly Darker Discord Color on Hover */
+            background-color: #ac2c2c;
         }
+
         .btn-large {
-            padding: 20px;
-            font-size: 1.2em; /* Make text larger */
-            font-weight: bold; /* Make text bolder */
-            display: block; /* Ensure it takes full width */
-        
+           padding: 12px;
+           font-size: 16px;
+           font-weight: bold;
+           display: block;
         }
 
+        .form-wrapper {
+          margin-top: 20px;
+        }
         .btn-register {
-            background-color: transparent;
-            color: #7289DA; /* Discord Brand Color */
-            padding: 14px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            text-decoration: none;
-            text-align: center;
-            font-size: 16px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+           background-color: transparent;
+           color: #eee; /* Light text */
+           width: 100%;
+           border: none;
+           cursor: pointer;
         }
 
-        .btn-register:hover,
-        .btn-register:focus {
-            background-color: #36393F; /* Slight Darken on Hover/Focus */
-            color: #FFFFFF; /* White Text on Hover */
-            outline: none;
+        .btn-register:hover {
+            text-decoration: underline;
         }
 
-        a {
-            color: #7289DA; /* Discord Brand Color */
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #99AAB5; /* Light Gray on Hover */
-        }
-        .form-wrapper{
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-            width: 100%;
-        }
+       .form-wrapper{
+           display: flex;
+           flex-direction: column;
+           gap: 15px;
+           align-items: center;
+           justify-content: center;
+           align-content: center;
+           width: 100%;
+       }
     </style>
-        
 </head>
 <body>
     <div class="login-container">
@@ -144,12 +137,9 @@
                 </div>
                 <button type="submit" class="btn-primary btn-large">Log In</button>
             </form>
-            <form action="register.php" method="post">
-                <input type="hidden" name="action" value="register">
-                <div class="form-group">
-                    <button type="submit" class="btn-register btn-large">Register</button>
-                </div>
-             </form>
+            <form action="register.html" method="get">
+                <button type="submit" class="btn-register btn-large">Register</button>
+            </form>
         </div>
     </div>
 </body>
