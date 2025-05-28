@@ -5,7 +5,7 @@ require_once 'database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
-    $sql = "SELECT * FROM User WHERE Username= '$username' AND password = '$password'";   
+    $sql = "SELECT * FROM User WHERE Name= '$username' AND Password = '$password'";   
     
     if ($result = $connection->query($sql)) {
         if ($result->num_rows > 0) {
@@ -13,8 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
              $row = $result->fetch_assoc();
              if($row){
                  $_SESSION['id_user'] = $row['ID'];
-                 $_SESSION['id_chat'] = 1;
-                 header("Location: chat.php");
+                 header("Location: link.html");
                  exit;
              }else{
                  header("Location: login.html?error=1");

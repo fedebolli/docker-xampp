@@ -1,0 +1,107 @@
+<?php
+    if 
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Shortener</title>
+    <style>
+        /* Modern Dark Theme Styles */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #1e1e1e; /* Dark background */
+            color: #f8f8f2; /* Light text color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background-color 0.3s ease;
+        }
+        .container {
+            background-color: rgba(30, 30, 30, 0.85); /* Semi-transparent dark container */
+            padding: 20px;
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Soft shadow */
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+        }
+        .container h1 {
+            color: #e0e0e0; /* Light text for heading */
+            margin-bottom: 10px;
+        }
+        .container p {
+            color: #ccc; /* Lighter text for paragraph */
+            margin-bottom: 20px;
+        }
+        .container input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #333; /* Dark input background */
+            border: 1px solid #555; /* Slightly brighter border */
+            border-radius: 8px;
+            color: #f8f8f2;
+        }
+        .container button {
+        padding: 10px 20px;
+        color: #000; /* Text color dark */
+        background-color: #64ffda; /* Vibrant button color */
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .container button:hover {
+        background-color: #3dd0a9; /* Darker on hover */
+    }
+
+        table {
+            width: 100%;
+        margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #555;
+            color: #f8f8f2;
+        }
+        th, td {
+            padding: 10px;
+            background-color: #333;
+            text-align: left;
+        }
+        tbody {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #1e1e1e;
+            color: #f8f8f2;
+            
+        }
+    </style>
+    <style>
+        #tableviewFrame {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Link Shortener</h1>
+        <p>Enter your link below to shorten it:</p>
+        <form action="link.php" method="POST">
+           <input type="text" id="linkInput" name="link" placeholder="Enter your link here">
+            <button type="submit">Shorten Link</button>
+        </form>
+        <table id="linksTable"> 
+            <tbody>
+                <iframe id="tableviewFrame" src="tableview.php"></iframe>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
